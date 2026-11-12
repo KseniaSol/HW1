@@ -17,21 +17,18 @@ public class Assignment01Q03 {
         /////////////////////////
 
         int numOdd = 0;
-        for (int i = 0; i < x; i++) {
+        outerLoop : for (int i = 0; i < x; i++) {
             System.out.print(fibb[i]); // print fibb numbers
             if (i < x - 1) 
                 System.out.print(" "); // Make sure we don't print a trailing space
 
-            int div = 0;
             for (int currDiv = 2; currDiv < fibb[i]; currDiv++) { // checking for dividers
                 if (fibb[i] % currDiv == 0) {
-                    div += 1;
+                    continue outerLoop;
                 }
             }
-            if (div == 0){
-                numOdd +=1 ; // if no dividers - odd
+            numOdd +=1 ; // if no dividers - odd
             }
-        }
         System.out.println();
         
         ////////////////////////////////////////////////////////////////
